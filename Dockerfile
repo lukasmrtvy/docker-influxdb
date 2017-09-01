@@ -30,6 +30,7 @@ EXPOSE 8086
 
 VOLUME /var/lib/influxdb
 
+RUN chmod +x entrypoint.sh
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["influxd"]
