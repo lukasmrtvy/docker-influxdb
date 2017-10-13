@@ -1,7 +1,7 @@
 # docker-influxdb
 
 
-`sudo docker rm -f influxdb ;sudo docker run -d --network my-bridge -p 25826:25826/udp --name influxdb --hostname influxdb myinfluxdb`
+`sudo docker rm -f influxdb ;sudo docker run -d -e TZ=Europe/Prague --network my-bridge -p 25826:25826/udp --name influxdb --hostname influxdb myinfluxdb`
 
 ```curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE collectd"
 curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE USER collectd WITH PASSWORD 'collectd' WITH ALL PRIVILEGES"
