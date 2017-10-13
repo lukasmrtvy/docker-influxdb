@@ -1,8 +1,12 @@
 # docker-influxdb
 
+## Info:
+Based on Alpine:latest
 
+## Usage:
 `sudo docker rm -f influxdb ;sudo docker run -d -e TZ=Europe/Prague --network my-bridge -p 25826:25826/udp --name influxdb --hostname influxdb -v influxdb:/var/lib/influxdb myinfluxdb`
 
+## A
 ```
 curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE collectd"
 curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE USER collectd WITH PASSWORD 'collectd' WITH ALL PRIVILEGES"
