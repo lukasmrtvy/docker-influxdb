@@ -17,8 +17,8 @@ RUN addgroup -S ${GROUP} -g ${GID} && adduser -D -S -u ${UID} ${USER} ${GROUP}  
     curl -sL https://github.com/collectd/collectd/blob/master/src/types.db -o /var/lib/influxdb/types.db  && \
     /opt/influxdb/influxd config -config /tmp/influxdb_custom.conf > /var/lib/influxdb/influxdb.conf && \
     chown -R ${USER}:${GROUP} /var/lib/influxdb && \
-    apk del .build-deps 
-    # && \ rm -rf /tmp/*
+    apk del .build-deps && \
+    rm -rf /tmp/*
 
 EXPOSE 8086
 
