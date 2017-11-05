@@ -14,7 +14,6 @@ RUN addgroup -S ${GROUP} -g ${GID} && adduser -D -S -u ${UID} ${USER} ${GROUP}  
     mkdir -p /opt/influxdb && curl -sL https://dl.influxdata.com/influxdb/releases/influxdb-${INFLUXDB_VERSION}-static_linux_amd64.tar.gz  | tar xz -C /opt/influxdb --strip-components=2 && \
     chmod +x /opt/influxdb/influxd && \
     mkdir -p /var/lib/influxdb  && \
-    curl -sL https://github.com/collectd/collectd/blob/master/src/types.db -o /var/lib/influxdb/types.db  && \
     /opt/influxdb/influxd config -config /tmp/influxdb_custom.conf > /var/lib/influxdb/influxdb.conf && \
     chown -R ${USER}:${GROUP} /var/lib/influxdb && \
     apk del .build-deps && \
