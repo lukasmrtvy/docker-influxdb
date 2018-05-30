@@ -23,7 +23,7 @@ EXPOSE 8086
 
 VOLUME /var/lib/influxdb/
 
-LABEL url=https://api.github.com/repos/influxdata/influxdb/releases/latest
+LABEL url=https://github.com/influxdata/influxdb/
 LABEL version=${INFLUXDB_VERSION}
 
 USER ${USER}
